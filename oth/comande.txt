@@ -1,0 +1,2 @@
+php artisan make:model Vehicule -m
+php artisan make:model Location -m

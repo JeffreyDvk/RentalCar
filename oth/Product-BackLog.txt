@@ -1,0 +1,32 @@
+- En tant que visiteur je peux consulter la liste des véhicules
+- En tant que visiteur , je peux créér un compte
+- En tant qu'utilisateur , je peux me connecter
+-- En tant qu'utilisateur , je peux accéder à mon profil
+-- En tant qu'utilisateur , je peux emprunter et rendre des voitures
+--- En tant qu'administrateur , je peux faire tout ce que fait un utilisateur simple
+--- En tant qu'administrateur , je peux modifier les informations d'un véhicule
+--- En tant qu'administrateur , je peux supprimer un véhicule de l'application
+--- En tant qu'administrateur , je peux ajouter un véhicule dans l'application
+--- En tant qu'administrateur , je peux accéder à la liste des locations effectués
+
+Entités 
+- vehicule ( immatriculation , marque , aperçu , segment , nombre_de_place, is_rent , cout_location)
+- user ( email , nom , prénoms , is_admin , pays , ville , adresse , identite )
+- location ( id , date_location , date_retour , user , vehicule , duree_en_jour , prix )
+
+Infos :
+- Le segment d'un véhicule est soit : mini-micro , sous-compacte , compacte , intermédiaire , grosse voiture , petite fourgonnette , fourgonnette moyenne , grosse fourgonette
+- L'identite d'un utilisateur désigne le numéro de sa carte nationale d'identité ou de son passeport
+- Le cout_location d'un véhicule est facturé à la journée ( 1jr )
+
+Paramètre de l'application:
+- Nom: RentalCar
+
+Warning :
+- J'ai rajouté la column "is_rent" dans la table vehicule
+
+Pages
+- Statistiques
+- Locations
+- Profil
+- Park
