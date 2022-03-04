@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
     <title>RentalCar</title>
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
+    @yield("head")
 </head>
 <body>
     <div class="wrapper">
@@ -16,7 +17,7 @@
                     <span class="align-middle">RentalCar</span>
                 </a>
                 <ul class="sidebar-nav pt-5">
-                    <li class="sidebar-item active">
+                    <li class="sidebar-item {{ $home ?? '' }}">
                         <a class="sidebar-link" href="/">
                             <i class="align-middle" data-feather="sliders"></i>
                             <span class="align-middle">Accueil</span>
@@ -24,13 +25,13 @@
                     </li>
                     @auth
                     @if (auth()->user()->is_admin)
-                    <li class="sidebar-item">
+                    <li class="sidebar-item {{ $statistiques ?? '' }}">
                         <a class="sidebar-link" href="/Statistiques">
                             <i class="align-middle" data-feather="sliders"></i>
                             <span class="align-middle">Statistiques</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
+                    <li class="sidebar-item {{ $locations ?? '' }}">
                         <a class="sidebar-link" href="/Locations">
                             <i class="align-middle" data-feather="sliders"></i>
                             <span class="align-middle">Locations</span>
@@ -38,14 +39,14 @@
                     </li>
                     @endif
                     @endauth
-                    <li class="sidebar-item">
+                    <li class="sidebar-item {{ $park ?? '' }}">
                         <a class="sidebar-link" href="/Park">
                             <i class="align-middle" data-feather="sliders"></i>
                             <span class="align-middle">Park</span>
                         </a>
                     </li>
                     @auth
-                    <li class="sidebar-item">
+                    <li class="sidebar-item {{ $profile ?? '' }}">
                         <a class="sidebar-link" href="/Profile">
                             <i class="align-middle" data-feather="users"></i>
                             <span class="align-middle">Profile</span>
@@ -82,8 +83,8 @@
                     </div>
                 </form>
                 @auth
-                <a class="nav-link dropdown-toggle d-inline-block" href="#" data-toggle="dropdown">
-                    <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded mr-1" alt="Charles Hall" />
+                <a class="nav-link dropdown-toggle d-inline-block" href="/Profile" data-toggle="dropdown">
+                    <img src="https://i.pinimg.com/236x/97/7f/e7/977fe798cf2c3a037e7aa9af6ce4b9d1.jpg" class="avatar img-fluid rounded mr-1" alt="Charles Hall" />
                     <span class="text-dark">{{ auth()->user()->name }}</span>
                 </a>
                 @endauth
@@ -120,7 +121,7 @@
     </div>
 
     <script src="js/main.js"></script>
-
+    @yield("scripts")
     
 
 </body>

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->increments('id', true);
             $table->string('immatriculation')->unique();
             $table->string('marque');
-            $table->string('segment');
-            $table->text('apercu')->nullable();;
+            $table->string('nom complet');
+            $table->text('apercu')->nullable();
             $table->integer('nombre_de_place');
             $table->boolean('is_rent');
             $table->bigInteger('cout_location');

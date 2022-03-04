@@ -14,22 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/Park', function () {
-    return view('park');
+    return view('park', ['park' => "active"]);
 });
 Route::get('/Locations', function () {
-    return view('locations');
+    return view('locations', ['locations' => "active"]);
 })->middleware(['auth'])->name('dashboard');
 Route::get('/Profile', function () {
-    return view('profile');
+    return view('profile', ['profile' => "active"]);
 });
 Route::get('/Statistiques', function () {
-    return view('statistiques');
+    return view('statistiques', ['statistiques' => "active"]);
 })->middleware(['auth'])->name('dashboard');
 Route::get('/', function () {
-    return view('home');
+    return view('home', ['home' => "active"]);
 });
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 require __DIR__.'/auth.php';
